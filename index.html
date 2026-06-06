@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PyLine Annotator — Line-by-line Python breakdown</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@6/lib/codemirror.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@6/theme/material-darker.min.css" />
+  <link rel="stylesheet" href="src/styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>🐍 PyLine Annotator</h1>
+      <p class="subtitle">Paste Python code. Get a clean line-by-line breakdown.</p>
+    </header>
+
+    <main class="app-main">
+      <section class="panel panel-input">
+        <label class="panel-label" for="code-input">Python code</label>
+        <textarea id="code-input">def hello(name: str) -> str:
+    return f"Hello, {name}!"
+
+result = hello("world")
+print(result)</textarea>
+      </section>
+
+      <section class="panel panel-controls">
+        <button id="annotate-btn" type="button">Annotate</button>
+        <button id="clear-btn" type="button">Clear</button>
+        <button id="copy-btn" type="button">Copy breakdown</button>
+        <label class="toggle">
+          <input id="deep-toggle" type="checkbox" />
+          <span>Deep mode</span>
+        </label>
+      </section>
+
+      <section class="panel panel-output">
+        <label class="panel-label" for="code-output">Line-by-line breakdown</label>
+        <div id="code-output" class="output-empty">Nothing annotated yet. Paste code and click <em>Annotate</em>.</div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <span>Local-only • No API usage • Works offline</span>
+    </footer>
+  </div>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

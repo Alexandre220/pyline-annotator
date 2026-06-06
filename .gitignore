@@ -1,0 +1,8 @@
+node_modules
+dist
+.venv
+.idea
+.vscode
+*.pyc
+__pycache__
+.insforge
